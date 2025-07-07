@@ -92,8 +92,8 @@ class LinhaDoTempo(models.Model):
         return self.nome
 
     class Meta:
-        verbose_name = "Linha do Tempo"
-        verbose_name_plural = "Linhas do Tempo"
+        verbose_name = "linha"
+        verbose_name_plural = "linhas"
 
 class Ocupacao(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Ocupação")
@@ -102,8 +102,8 @@ class Ocupacao(models.Model):
         return self.nome
 
     class Meta:
-        verbose_name = "Ocupação"
-        verbose_name_plural = "Ocupações"
+        verbose_name = "Ocupacao"
+        verbose_name_plural = "Ocupacoes"
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome")
@@ -115,8 +115,8 @@ class Usuario(models.Model):
         return self.nome
 
     class Meta:
-        verbose_name = "Usuário"
-        verbose_name_plural = "Usuários"
+        verbose_name = "Usuario"
+        verbose_name_plural = "Usuarios"
 
 
 

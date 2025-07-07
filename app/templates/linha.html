@@ -1,0 +1,83 @@
+<!-- Similar ao anterior, só mudam os campos e o contexto -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linha do Tempo - Viajando pelo Tempo</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <style>
+    .bg-roxo {
+      background-color: #6f42c1 !important;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-roxo">
+    <a class="navbar-brand" href="/">Viajando pelo Tempo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- seus links aqui -->
+        <!-- copie igual ao template anterior -->
+        <li class="nav-item"><a class="nav-link text-light" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/evento/">Evento Histórico</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/personagem/">Personagem</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/documento/">Documento</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/tipo/">Tipo do Documento</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/area/">Área do Saber</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/usuario/">Usuário</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/ocupacao/">Ocupação</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/cidade/">Cidade</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/linha/">Linha do Tempo</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="/admin/">Administração</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Linha do Tempo</h2>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nome</th>
+          <th>Data de início</th>
+          <th>Data de final</th>
+          <th>Eventos</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for linha in linhas %}
+        <tr>
+          <td>{{ linha.nome }}</td>
+          <td>{{ linha.data_inicio }}</td>
+          <td>{{ linha.data_final }}</td>
+          <td>{{ linha.eventos }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">Nenhum evento encontrado.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
