@@ -57,6 +57,7 @@
           <th>Data Início</th>
           <th>Data Fim</th>
           <th>Cidade</th>
+          <th>Area do Saber</th>
         </tr>
       </thead>
       <tbody>
@@ -66,7 +67,8 @@
           <td>{{ evento.descricao|truncatechars:50 }}</td>
           <td>{{ evento.data_inicio }}</td>
           <td>{{ evento.data_fim }}</td>
-          <td>{{ evento.cidade }}</td>
+          <td>{{ evento.cidade}}</td>
+          <td>{{ evento.area }}</td>
         </tr>
         {% empty %}
         <tr>

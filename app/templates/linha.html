@@ -65,14 +65,21 @@
           <td>{{ linha.nome }}</td>
           <td>{{ linha.data_inicio }}</td>
           <td>{{ linha.data_final }}</td>
-          <td>{{ linha.eventos }}</td>
+          <td>
+            {% for evento in linha.eventos.all %}
+              {{ evento.nome }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+              Sem eventos
+            {% endfor %}
+          </td>
         </tr>
         {% empty %}
         <tr>
-          <td colspan="4">Nenhum evento encontrado.</td>
+          <td colspan="4">Nenhuma linha do tempo encontrada.</td>
         </tr>
         {% endfor %}
       </tbody>
+      
     </table>
   </div>
 

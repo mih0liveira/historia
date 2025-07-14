@@ -13,14 +13,14 @@ class Cidade(models.Model):
 
 
 class TipoDocumento(models.Model):
-    nome = models.CharField(max_length=100, verbose_name="Tipo de Documento")
+    nome = models.CharField(max_length=100, verbose_name="Tipo")
 
     def __str__(self):
         return self.nome
 
     class Meta:
-        verbose_name = "Tipo de Documento"
-        verbose_name_plural = "Tipos de Documento"
+        verbose_name = "Tipo"
+        verbose_name_plural = "Tipos"
 
 
 class AreaSaber(models.Model):
@@ -41,9 +41,12 @@ class EventoHistorico(models.Model):
     data_inicio = models.DateField(verbose_name="Data de Início")
     data_fim = models.DateField(verbose_name="Data de Fim")
     cidade = models.ForeignKey(Cidade, on_delete=models.SET_NULL, null=True, verbose_name="Cidade")
+    area = models.ForeignKey(AreaSaber, on_delete=models.SET_NULL, null=True, verbose_name="Área do Saber")
 
     def __str__(self):
-        return self.nome
+        return self.nome if self.nome else "(Evento sem nome)"
+
+        
 
     class Meta:
         verbose_name = "Evento Histórico"

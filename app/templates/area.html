@@ -54,14 +54,14 @@
       <thead class="thead-dark">
         <tr>
           <th>Nome</th>
-          <th>Descrição</th>
+          
         </tr>
       </thead>
       <tbody>
         {% for area in areas %}
         <tr>
           <td>{{ area.nome }}</td>
-          <td>{{ area.descricao|default:"-" }}</td>
+        
         </tr>
         {% empty %}
         <tr>

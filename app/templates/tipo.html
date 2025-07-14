@@ -54,14 +54,12 @@
       <thead class="thead-dark">
         <tr>
           <th>Nome</th>
-          <th>Descrição</th>
         </tr>
       </thead>
       <tbody>
-        {% for tipo in tipos %}
+        {% for tipo in tipos_documentos %}
         <tr>
           <td>{{ tipo.nome }}</td>
-          <td>{{ tipo.descricao|default:"-" }}</td>
         </tr>
         {% empty %}
         <tr>
